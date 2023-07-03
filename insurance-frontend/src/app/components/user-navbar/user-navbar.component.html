@@ -1,0 +1,46 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between">
+            <a class="navbar-brand" routerLink="/createclaim">Dashboard</a>
+            <div id="navbarText">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" routerLink="/createclaim">Home</a>
+                    </li>
+                    <!-- <li *ngIf="clientRegistered()" class="nav-item">
+                      <a class="nav-link" routerLink="/claims">Claims</a>
+                    </li>
+                    <li *ngIf="clientRegistered()" class="nav-item">
+                      <a class="nav-link" routerLink="/claims/add">Add Claim</a>
+                    </li>
+                    <li *ngIf="showDevTab()" class="nav-item">
+                        <a class="nav-link" routerLink="/dev">Vehicles</a>
+                    </li>
+                    <li *ngIf="!clientRegistered()"class="nav-item">
+                      <a class="nav-link" routerLink="/create-client">Add Vehicle</a>
+                    </li>
+                    <li *ngIf="clientRegistered()"class="nav-item">
+                      <a class="nav-link" routerLink="/update">Update Vehicle</a>
+                    </li>
+                    <li>
+                      <a class="nav-link" routerLink="/account/update">Update Account Info</a>
+                    </li>
+                    <li *ngIf="showDevTab()" class="nav-item">
+                      <a class="nav-link" routerLink="/create-dev">Create a Dev Account</a>
+                    </li> -->
+                </ul>
+              </div>
+        </div>
+      
+      <div id="navbarText">
+        <ul class="nav navbar-nav">
+            <li>
+                <p class="nav-link">Currently logged in: {{(currentUser())}}<p></p>
+            </li>
+            <li>
+                <button type="button" class="btn btn-danger btn-sm" (click)="logout()">Log Out</button>
+            </li>
+        </ul>
+      </div>
+    </div>
+ </nav>
