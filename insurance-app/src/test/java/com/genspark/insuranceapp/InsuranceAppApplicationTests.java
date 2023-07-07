@@ -51,9 +51,9 @@ class InsuranceAppApplicationTests {
 
 	@Test
 	void correctFindUsername(){
-		User user = userInfoService.findByUserName("adjuster");
-		assertTrue(user.getUsername().equals("adjuster"));
-		assertTrue(user.getPassword().equals("$2a$10$5W.UNBGR8V5fTt9fQyMUw.vP9q0K72zG5LsQD1bJ.ob7OZdp8EYza"));
+		User user = userInfoService.findByUserName("adjuster44");
+		assertTrue(user.getUsername().equals("adjuster44"));
+		assertTrue(user.getPassword().equals("$2a$10$iBZBa83v1opAeX/rdnCZdeBGnT09.pHyz8FfX2trmsKJYoJUDEY.2"));
 		assertEquals(user.getRoles().size(),2);
 	}
 

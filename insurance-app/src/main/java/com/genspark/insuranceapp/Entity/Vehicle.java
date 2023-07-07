@@ -13,9 +13,11 @@ import lombok.NoArgsConstructor;
 public class Vehicle {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="vehicle_vin")
-    private int vin;
+    private String vin;
+
+    @Column(name = "vehicle_year")
+    private int year;
 
     @Column(name = "vehicle_make")
     private String make;
@@ -23,20 +25,18 @@ public class Vehicle {
     @Column(name = "vehicle_model")
     private String model;
 
-    @Column(name = "vehicle_year")
-    private int year;
-
-    @Column(name = "username")
-    private String username;
+    @ManyToOne
+    @JoinColumn(name="username", referencedColumnName="username")
+    private User user;
 
     @Override
     public String toString() {
         return "Vehicle{" +
                 "vin=" + vin +
+                ", year='" + year + '\'' +
                 ", make='" + make + '\'' +
                 ", model='" + model + '\'' +
-                ", year='" + year + '\'' +
-                ", username=" + username +
+                ", username=" + user.getUsername() +
                 '}';
     }
 
