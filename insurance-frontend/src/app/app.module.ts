@@ -13,6 +13,14 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RegisterComponent } from './components/register/register.component';
 import { UserNavbarComponent } from './components/user-navbar/user-navbar.component';
 import { CreateClaimComponent } from './components/create-claim/create-claim.component';
+import { UserHomepageComponent } from './components/user-homepage/user-homepage.component';
+import { UserVehiclesComponent } from './components/user-vehicles/user-vehicles.component';
+import { VehicleComponent } from './components/vehicle/vehicle.component';
+import { AddVehicleComponent } from './components/add-vehicle/add-vehicle.component';
+import { ClaimsListComponent } from './components/claims-list/claims-list.component';
+import { ClaimComponent } from './components/claim/claim.component';
+import { UpdateClaimComponent } from './components/update-claim/update-claim.component';
+import { CreateClaimByVehicleComponent } from './components/create-claim-by-vehicle/create-claim-by-vehicle.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +31,15 @@ import { CreateClaimComponent } from './components/create-claim/create-claim.com
     FooterComponent,
     RegisterComponent,
     UserNavbarComponent,
-    CreateClaimComponent
+    CreateClaimComponent,
+    UserHomepageComponent,
+    UserVehiclesComponent,
+    VehicleComponent,
+    AddVehicleComponent,
+    ClaimsListComponent,
+    ClaimComponent,
+    UpdateClaimComponent,
+    CreateClaimByVehicleComponent
   ],
   imports: [
     BrowserModule,

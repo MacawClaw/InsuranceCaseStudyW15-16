@@ -1,0 +1,39 @@
+<app-user-navbar></app-user-navbar>
+
+<section class="vh-100" style="background-color: #c3e1f5;">
+    <div class="container h-75">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-5 m-5">
+                        <div class="row justify-content-center">
+                            <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">{{vehicle.year}} {{vehicle.make}} {{vehicle.model}}</p>
+                            <p class="text-center">VIN: {{vehicle.vin}}</p>
+                                <p class="d-flex justify-content-center align-items-center mt-4">
+                                <!-- <button type="button" (click)="getStarted()" class="btn btn-outline-dark btn-rounded" style="background-color: rgb(55, 211, 223);">
+                                    Get started
+                                </button> -->
+                                </p>
+                        </div>
+
+                        <div class="row justify-content-center">
+                            <button type="button" (click)="navigateToAddClaim(vehicle.vin)" class="btn btn-outline-dark btn-rounded">File a claim</button>
+                        </div>
+
+                        <hr/>
+                        <div *ngIf="claims.length==0">No claims to display</div>
+                        <div class="row justify-content-center pt-sm-4" *ngFor="let claim of claims">
+                            <div class="row justify-content-left" (click)="navigateToClaim(claim.claimId)">
+                                <h4>Claim Id: {{claim.claimId}}</h4>
+                                <h5 class="text-primary"><strong>{{claim.claimStatus.name}}</strong></h5>
+                                <p>${{claim.claimCost}}<br>
+                                {{claim.claimDescription}}</p>
+                                <hr/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+</section>

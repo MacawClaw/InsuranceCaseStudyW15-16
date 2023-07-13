@@ -1,0 +1,76 @@
+<app-user-navbar></app-user-navbar>
+
+<section class="vh-100" style="background-color: #c3e1f5;">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;">
+            <div class="card-body p-md-5">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+  
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Claim Form</p>
+  
+                  <form class="mx-1 mx-md-3">
+
+                    <div *ngIf="showAdjusterFeature()" class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <label class="form-label" for="form3Example4ce">Username</label>
+                          <input type="text" name="username" [(ngModel)]="clientUsername" id="clientUsername" class="form-control" placeholder="{{clientUsername}}" disabled=""/>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                        <label for="vehicle" class="form-label mt-4">Select a vehicle</label>
+                        <select class="form-select" id="vehicle" name="vehicle" disabled="">
+                          <option>{{vehicle.year}} {{vehicle.make}} {{vehicle.model}}</option>
+                        </select>
+                        </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0" name="claimCost">
+                          <label class="form-label" for="form3Example4ce">Cost of Damage</label>
+                          <input *ngIf="showAdjusterFeature()" type="text" name="claimCost" id="claimCost" class="form-control" [(ngModel)]="claimCost" [value]="claimCost" disabled=""/>
+                          <input *ngIf="!showAdjusterFeature()" type="text" name="claimCost" id="claimCost" class="form-control" [(ngModel)]="claimCost" [value]="claimCost"/>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0" name="claimDescription">
+                        <label class="form-label" for="form3Example4cf">Describe the incident and damage.</label>
+                          <textarea *ngIf="showAdjusterFeature()" class="form-control" id="claimDescription" rows="5" name="claimDescription" disabled="">{{claimDescription}}</textarea>                        
+                          <textarea *ngIf="!showAdjusterFeature()" class="form-control" id="claimDescription" rows="5" name="claimDescription" [(ngModel)]="claimDescription" [value]="claimDescription"></textarea>                        
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0" name="adjusterNotes">
+                        <label class="form-label" for="form3Example4cf">Adjuster Notes.</label>
+                          <textarea *ngIf="showAdjusterFeature()" class="form-control" id="adjusterNotes" rows="5" name="adjusterNotes" [(ngModel)]="adjusterNotes" [value]="adjusterNotes"></textarea>
+                          <textarea *ngIf="!showAdjusterFeature()" class="form-control" id="adjusterNotes" rows="5" name="adjusterNotes" disabled="">{{adjusterNotes}}</textarea>                        
+                        </div>
+                    </div>
+  
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <button type="button" (click)="onSubmit()" class="btn btn-primary btn-lg">Update Claim</button>
+                    </div>
+  
+                  </form>
+  
+                </div>
+            
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>

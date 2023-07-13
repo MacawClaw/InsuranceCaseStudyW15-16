@@ -25,3 +25,12 @@ values (2008, "Nissan", "Altima", "1N4AL21E68N441282", "ogarcia"),
 (2011, "Toyota", "Prius", "JTDKN3DUXB0303475", "jsmith"),
 (2003, "Toyota", "Highlander", "JTEHF21A430098874", "hblight"),
 (2003, "Chevrolet", "Suburban", "1GNFK16T93R304740", "jsmith");
+
+Insert into claims(status_id, claim_description, claim_cost, adjuster_notes, vehicle_vin, username)
+values (1, "My car was hit by a deer", 1200.00, "Please submit an estimate by the body shop", "1N4AL21E68N441282", "ogarcia"),
+(1, "A tree fell on my car", 1600.00, "Please submit an estimate by the body shop", "1N4AL21E68N441282", "ogarcia"),
+(1, "I was t-boned by another car", 1700.00, "Please submit an estimate by the body shop", "1FMYU02B32KA63604", "ogarcia");
+
+Insert into claims_status(status_name)
+values("Filed"),("Being Evaluated"),("Approved"),("Denied"),("Returned to Client"), ("Updated"), ("Withdrawn");
+

@@ -1,0 +1,55 @@
+<app-user-navbar></app-user-navbar>
+
+<section class="vh-100" style="background-color: #c3e1f5;">
+    <div class="container h-75">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-5 m-5">
+                        <div class="row justify-content-center">
+                            <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Claim ID: {{claimId}}</p>
+                            <p class="text-center h2">Status: {{claim.claimStatus.name}}</p>
+                            <p class="d-flex justify-content-center align-items-center mt-4">{{claim.vehicle.year}} {{claim.vehicle.make}} {{claim.vehicle.model}}</p>
+                            <p class="d-flex justify-content-center align-items-center mt-4">VIN: {{claim.vehicle.vin}}</p>                            
+                        </div>
+
+                        <div *ngIf="!showAdjusterFeature()" class="row justify-content-center">
+                            <p *ngIf="showUserOptions()" class="d-md-inline-flex justify-content-center align-items-center mt-4">
+                                <button type="button" (click)="navigateToUpdateClaim(claimId)" class="btn btn-primary btn-rounded btn-lg mx-4">Update</button>
+                                <button type="button" (click)="withdrawClaim(claimId)" class="btn btn-danger btn-rounded btn-lg mx-4">Withdraw</button>
+                            </p>   
+                        </div>
+
+                        <div *ngIf="showAdjusterFeature()" class="row justify-content-center">
+                            <p *ngIf="showAdjusterOptions()" class="d-md-inline-flex justify-content-center align-items-center mt-4">
+                                <button type="button" (click)="approveClaim()" class="btn btn-success btn-rounded btn-lg mx-4">Approve</button>
+                                <button type="button" (click)="denyClaim()" class="btn btn-danger btn-rounded btn-lg mx-4">Deny</button>
+                                <button type="button" (click)="returnClaim()" class="btn btn-primary btn-rounded btn-lg mx-4">Return to Client</button>
+                                <button type="button" (click)="addNotes()" class="btn btn-primary btn-rounded btn-lg mx-4">Add Notes</button>
+                            </p>   
+                        </div>
+
+                        <div>
+                            <div>
+
+                            </div>
+                        </div>
+
+                        <hr/>
+                        <div class="row justify-content-center pt-sm-4">
+                            <div class="row justify-content-left">
+                                <h5 class="text-primary"><strong>${{claim.claimCost}}</strong></h5>
+                                <p>{{claim.claimDescription}}</p>
+                            </div>
+
+                            <div class="row justify-content-left">
+                                <h5 class="text-primary"><strong>Adjuster Notes:</strong></h5>
+                                <p>{{claim.adjusterNotes}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+</section>

@@ -43,12 +43,13 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/api/adjuster").hasRole("ADJUSTER")
                         .requestMatchers(HttpMethod.POST, "/api/users").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/users/login").permitAll()
-                        /*.requestMatchers(HttpMethod.POST, "/admin/clients/**").permitAll()
-                        .requestMatchers(HttpMethod.PUT, "/admin/clients/**").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/admin/clients/**").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/admin/projects/**").permitAll()
-                        .requestMatchers(HttpMethod.PUT, "/admin/projects/**").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/admin/projects/**").permitAll()*/
+                        .requestMatchers(HttpMethod.GET, "/api/vehicles/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/vehicles/**").permitAll()
+                        .requestMatchers(HttpMethod.PUT, "/api/vehicles/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/claims/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/claims/**").permitAll()
+                        .requestMatchers(HttpMethod.PUT, "/api/claims/**").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/error").permitAll()
         );
         //register component
         //http.authorizeHttpRequests().requestMatchers(HttpMethod.POST, "/api/users").permitAll();

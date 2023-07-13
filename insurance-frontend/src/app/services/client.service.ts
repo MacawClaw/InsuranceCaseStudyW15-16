@@ -38,7 +38,6 @@ export class ClientService {
 
   updateUsername(){
     this.username = localStorage.getItem('currentUser');
-
   }
 
   /*

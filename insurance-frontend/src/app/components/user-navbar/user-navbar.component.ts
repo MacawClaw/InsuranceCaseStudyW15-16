@@ -8,6 +8,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./user-navbar.component.css']
 })
 export class UserNavbarComponent {
+  
   constructor(private authenticationService: AuthService,
     private router: Router){}
 
@@ -22,18 +23,8 @@ export class UserNavbarComponent {
   currentUser(): string{
     return localStorage.getItem('currentUser') as string;
   }
-  showAdjusterTab(): boolean {
+  showAdjusterFeature(): boolean {
     return this.authenticationService.isAuthenticatedAdjuster();
-  }
-
-  clientRegistered(): boolean{
-    let clientId = parseInt(localStorage.getItem('clientId') || '0', 10);
-    if(clientId == 0){
-    return false;
-  } else {
-    return true;
-  }
-
   }
 
 }

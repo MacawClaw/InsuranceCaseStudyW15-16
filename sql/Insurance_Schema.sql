@@ -43,3 +43,28 @@ create table vehicles(
     ON DELETE CASCADE
     ON UPDATE CASCADE
 );
+
+create table claims(
+	claim_id int primary key auto_increment,
+    status_id int not null,
+    claim_description varchar(5000) not null,
+    claim_cost decimal(10,2) not null,
+    adjuster_notes varchar(5000) not null,
+    vehicle_vin varchar(17) not null,
+    username varchar(512) not null,
+    constraint fk_claims_status_id
+    foreign key (status_id)
+    references claims_status(status_id),
+    constraint fk_claims_vehicle_vin
+    foreign key (vehicle_vin)
+    references vehicles(vehicle_vin),
+    constraint fk_claims_username
+    foreign key (username)
+    references users(username)
+);
+
+create table claims_status(
+	status_id int primary key auto_increment,
+    status_name varchar(40) not null
+);
+    

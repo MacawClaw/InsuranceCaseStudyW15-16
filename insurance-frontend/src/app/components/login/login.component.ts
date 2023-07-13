@@ -59,6 +59,7 @@ export class LoginComponent {
         this.user.roles.forEach((role: Role) => {
           if(role.name === 'ROLE_ADJUSTER'){
             isAdjuster = true;
+            console.log(isAdjuster);
           }
         })
 
@@ -68,7 +69,7 @@ export class LoginComponent {
         
         this.clientService.updateUsername();
         this.authenticationService.authenticateClient();
-        this.router.navigateByUrl('/createclaim');
+        this.router.navigateByUrl('/userhomepage');
         /*
         this.clientService.getClientByUsername().subscribe((client) => {
           if(client == null){
@@ -83,39 +84,11 @@ export class LoginComponent {
         }
         */
 
-        /*
+        
         if(isAdjuster){
-          this.authenticationService.authenticateAdjuster();
-          this.authenticationService.authenticateClient();
-          this.clientService.updateUsername();
-          this.clientService.getClientByUsername().subscribe((client) => {
-            if(client == null){
-              localStorage.setItem('clientId', '0');
-              this.projectService.updateClientIdLocal();
-              this.router.navigate(['/dashboard']);
-            } else {
-              localStorage.setItem('clientId', '' + client.clientId);
-              this.projectService.updateClientIdLocal();
-              this.router.navigate(['/dashboard']);
-            }
-          })
-        } else {
-          this.clientService.updateUsername();
-          this.authenticationService.authenticateClient();
-          this.clientService.getClientByUsername().subscribe((client) => {
-            if(client == null){
-              localStorage.setItem('clientId', '0');
-              this.projectService.updateClientIdLocal();
-              this.router.navigate(['/dashboard']);
-            } else {
-              localStorage.setItem('clientId', '' + client.clientId);
-              this.projectService.updateClientIdLocal();
-              this.router.navigate(['/dashboard']);
-            }
-          }
-          )
-        } 
-        */
+          this.authenticationService.authenticateAdjuster();       
+        }
+        
       }
     })
   }

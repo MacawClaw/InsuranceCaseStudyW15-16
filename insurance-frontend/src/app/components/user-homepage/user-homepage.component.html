@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-user-navbar></app-user-navbar>
 
 <section class="vh-100" style="background-color: #c3e1f5;">
     <div class="container h-75">
@@ -7,7 +7,7 @@
         <div class="card text-black" style="border-radius: 25px;">
             <div class="card-body p-5 m-5">
                 <div class="row justify-content-center">
-                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Auto Insurance App</p>
+                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Welcome User!</p>
                     <p class="text-center">An application for filing and managing claims.</p>
                         <p class="d-flex justify-content-center align-items-center mt-4">
                           <!-- <button type="button" (click)="getStarted()" class="btn btn-outline-dark btn-rounded" style="background-color: rgb(55, 211, 223);">
@@ -27,15 +27,21 @@
                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
                     <h2 class="h4 fw-bolder">File a Claim</h2>
                     <p>File or update a claim for all your vehicles. All in one account.</p>
+                    <button type="button" routerLink="/createclaim" class="btn btn-outline-dark btn-rounded">
+                        File a claim
+                      </button>
                 </div>
                 <div class="col-lg-4 mb-5 mb-lg-0">
                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
-                    <h2 class="h4 fw-bolder">Ease of use</h2>
-                    <p>We took care of making sure the app is straight to the point.</p>
-                    <a class="text-decoration-none" href="#!">
-                        Call to action
+                    <h2 class="h4 fw-bolder">View your Vehicles</h2>
+                    <p>Look at your vehicles and add more as needed.</p>
+                    <button type="button" routerLink="/vehicles" class="btn btn-outline-dark btn-rounded">
+                        Your Vehicles
+                      </button>
+                    <!-- <a class="text-decoration-none" href="#!">
+                        Your Vehicles
                         <i class="bi bi-arrow-right"></i>
-                    </a>
+                    </a> -->
                 </div>
                 <div class="col-lg-4">
                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
@@ -51,3 +57,5 @@
     </section>
     
 </section>
+
+
