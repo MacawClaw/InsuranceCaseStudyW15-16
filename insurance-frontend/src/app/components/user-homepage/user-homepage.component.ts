@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class UserHomepageComponent {
 
+  firstName = localStorage.getItem('currentName')!;
 }

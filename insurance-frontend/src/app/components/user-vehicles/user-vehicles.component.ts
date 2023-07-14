@@ -13,6 +13,7 @@ import { VehicleService } from 'src/app/services/vehicle.service';
 export class UserVehiclesComponent {
 
   username!: string;
+  firstName!: string;
   vehicles: Vehicle[] = []; 
   isAdjuster:boolean = false;
 
@@ -28,6 +29,7 @@ export class UserVehiclesComponent {
 
     if (!this.showAdjusterFeature()){
       this.username = localStorage.getItem('currentUser')!;
+      this.firstName = localStorage.getItem('currentName')!;
       this.vehicleService.getVehiclesListByUsername(this.username).subscribe((vehicles) => {
         this.vehicles = vehicles;   
       });

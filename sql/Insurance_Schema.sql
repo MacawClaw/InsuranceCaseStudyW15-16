@@ -73,6 +73,9 @@ create table files(
     `data` mediumblob,
     `name` varchar(500),
     `type` varchar(100),
-    claim_id int
+    claim_id int,
+    constraint fk_files_claim_id
+    foreign key (claim_id)
+    references claims(claim_id)
 )
     

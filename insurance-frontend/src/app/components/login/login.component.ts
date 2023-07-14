@@ -47,6 +47,7 @@ export class LoginComponent {
     localStorage.setItem('currentUser', rawuser.username);
     this.accountService.loginCheck(rawuser).subscribe((user) => {
       this.user = user;
+      localStorage.setItem('currentName', user.firstName);
       let isAdjuster:boolean = false;
       if(this.user.enabled == false) {
         alert("Account not enabled or details are wrong, please try again.")
