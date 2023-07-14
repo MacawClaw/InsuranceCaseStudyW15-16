@@ -14,6 +14,7 @@ import { VehicleService } from 'src/app/services/vehicle.service';
 export class ClaimsListComponent {
   
   username = localStorage.getItem('currentUser');
+  firstName = localStorage.getItem('currentName')!;
   statuses = [{'id':0,'name': "All"}, 
   {'id':1,'name': "Filed"}, 
   {'id':2,'name': "Being Evaluated"}, 
