@@ -67,13 +67,16 @@ export class RegisterComponent {
       username: this.username,
       password: this.password,
       email: this.email,
-      fname: this.fname,
-      lname: this.lname,
+      firstName: this.fname,
+      lastName: this.lname,
       phone: this.phone,
       address: this.address,
       enabled: true,
       roles: [{'id':2,'name': "ROLE_CLIENT"}] 
     }
+
+    console.log(newUser.firstName);
+    console.log(newUser.lastName);
     this.accountService.addUser(newUser).subscribe((user: User) => (this.userCreated = user));
     alert('Account succesfully created. Please use the login tab for logging into the application. If it does not work please try registering a different username.');
     //alert(this.userCreated.username);

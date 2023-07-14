@@ -21,6 +21,7 @@ import { ClaimsListComponent } from './components/claims-list/claims-list.compon
 import { ClaimComponent } from './components/claim/claim.component';
 import { UpdateClaimComponent } from './components/update-claim/update-claim.component';
 import { CreateClaimByVehicleComponent } from './components/create-claim-by-vehicle/create-claim-by-vehicle.component';
+import { ManageFileComponent } from './components/manage-file/manage-file.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { CreateClaimByVehicleComponent } from './components/create-claim-by-vehi
     ClaimsListComponent,
     ClaimComponent,
     UpdateClaimComponent,
-    CreateClaimByVehicleComponent
+    CreateClaimByVehicleComponent,
+    ManageFileComponent
   ],
   imports: [
     BrowserModule,

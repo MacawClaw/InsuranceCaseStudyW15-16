@@ -22,6 +22,21 @@ public class FileDB {
 
     private String type;
 
+    private int claimId;
+
     @Lob
     private byte[] data;
+
+    public FileDB(String name, String type, byte[] data) {
+        this.name = name;
+        this.type = type;
+        this.data = data;
+    }
+
+    public FileDB(String name, String type, int claimId, byte[] data) {
+        this.name = name;
+        this.type = type;
+        this.claimId = claimId;
+        this.data = data;
+    }
 }

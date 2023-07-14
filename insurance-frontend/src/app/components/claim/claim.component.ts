@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable, map } from 'rxjs';
 import { Claim } from 'src/app/entities/Claim';
 import { Vehicle } from 'src/app/entities/Vehicle';
 import { AuthService } from 'src/app/services/auth.service';
 import { ClaimService } from 'src/app/services/claim.service';
+import { FileService } from 'src/app/services/file.service';
 
 @Component({
   selector: 'app-claim',
@@ -16,7 +18,9 @@ export class ClaimComponent {
   claim!: Claim;
   vehicle!: Vehicle;
 
-  constructor(private http:HttpClient, private authenticationService: AuthService, private claimService: ClaimService, private router: Router, private route: ActivatedRoute) { }
+  fileInfos?: Observable<any>;
+
+  constructor(private fileService: FileService, private http:HttpClient, private authenticationService: AuthService, private claimService: ClaimService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
@@ -25,6 +29,10 @@ export class ClaimComponent {
     this.getClaimInfo();  
     // this.isDev = this.authService.isAuthenticatedDev();
     // alert(this.isDev);
+    this.fileInfos = this.fileService.getFiles();
+    this.fileInfos = this.fileInfos.pipe(
+    map(files => files.filter((file: { claimId: any; }) => file.claimId == this.claimId))
+  );
   }
 
   async getClaimInfo() {

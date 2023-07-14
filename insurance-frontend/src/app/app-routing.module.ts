@@ -12,6 +12,7 @@ import { ClaimsListComponent } from './components/claims-list/claims-list.compon
 import { ClaimComponent } from './components/claim/claim.component';
 import { UpdateClaimComponent } from './components/update-claim/update-claim.component';
 import { CreateClaimByVehicleComponent } from './components/create-claim-by-vehicle/create-claim-by-vehicle.component';
+import { ManageFileComponent } from './components/manage-file/manage-file.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -25,7 +26,8 @@ const routes: Routes = [
   {path: 'claims', component: ClaimsListComponent},
   {path: 'claim/:claimId', component: ClaimComponent},
   {path: 'updateclaim/:claimId', component: UpdateClaimComponent},
-  {path: 'addclaim/:vin', component: CreateClaimByVehicleComponent}
+  {path: 'addclaim/:vin', component: CreateClaimByVehicleComponent},
+  {path: 'managefile/:claimId', component: ManageFileComponent}
 ];
 
 @NgModule({

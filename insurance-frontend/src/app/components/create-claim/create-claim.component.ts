@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Claim } from 'src/app/entities/Claim';
 import { Status } from 'src/app/entities/Status';
 import { User } from 'src/app/entities/User';
@@ -22,8 +23,9 @@ export class CreateClaimComponent {
   adjusterNotes = "";
   claimCost!: number;
   claimDescription!: string;
+  claimId!: number;
   
-  constructor(private http: HttpClient, private authenticationService: AuthService, private claimService: ClaimService, private vehicleService: VehicleService){
+  constructor(private http: HttpClient, private authenticationService: AuthService, private claimService: ClaimService, private vehicleService: VehicleService, private router: Router){
   }
 
   ngOnInit(): void{
@@ -74,7 +76,14 @@ export class CreateClaimComponent {
 
     console.log(newClaim);
     
-    this.claimService.addClaim(newClaim).subscribe((claim: Claim) => (console.log(claim.claimId)));
+    this.claimService.addClaim(newClaim).subscribe((claim: Claim) => (
+      this.claimService.getClaimsByUsername().subscribe((claims) => {
+        claims.reverse();
+        this.claimId = Math.max(...claims.map(claim => claim.claimId));
+        console.log(this.claimId); 
+        this.router.navigate(['/managefile', this.claimId]); 
+      })
+      ));
     alert('Claim saved successfully.');
     
   }

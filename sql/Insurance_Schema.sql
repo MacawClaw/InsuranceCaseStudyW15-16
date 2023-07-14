@@ -67,4 +67,12 @@ create table claims_status(
 	status_id int primary key auto_increment,
     status_name varchar(40) not null
 );
+
+create table files(
+	id varchar(500),
+    `data` mediumblob,
+    `name` varchar(500),
+    `type` varchar(100),
+    claim_id int
+)
     

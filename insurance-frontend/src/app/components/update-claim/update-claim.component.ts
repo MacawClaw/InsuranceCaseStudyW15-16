@@ -82,6 +82,7 @@ export class UpdateClaimComponent {
     
     this.claimService.updateClaim(newClaim).subscribe((claim: Claim) => (console.log(claim.claimId)));
     alert('Claim saved successfully.');
+    this.router.navigate(['/managefile', this.claimId]); 
     
   }
 

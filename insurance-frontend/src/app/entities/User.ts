@@ -5,8 +5,8 @@ export interface User {
     password: string,
     enabled: boolean,
     email: string,
-    fname: string,
-    lname: string,
+    firstName: string,
+    lastName: string,
     phone: string,
     address: string,
     roles: Role[]

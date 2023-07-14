@@ -49,6 +49,10 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/api/claims/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/claims/**").permitAll()
                         .requestMatchers(HttpMethod.PUT, "/api/claims/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/files/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/files/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/files/**").permitAll()
+                        .requestMatchers(HttpMethod.DELETE, "/files/**").permitAll()
                         .requestMatchers(HttpMethod.GET,"/error").permitAll()
         );
         //register component
